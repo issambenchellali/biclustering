@@ -130,8 +130,8 @@ def get_n_randoms_from_list( n, mylist ):
     for i in range( n ):
         pos = random.randrange( len( mylist ) )
         elem = mylist[ pos ]
-        mylist[pos] = mylist[-1]
-        del mylist[-1]
+       #mylist[pos] = mylist[-1]
+       #del mylist[-1]
         out.append( elem )
     return out
 
@@ -204,13 +204,13 @@ if __name__ == '__main__':
 
     # Add a feature to detect
     FEATURE = numpy.zeros( SHAPE )
-    FEATURE[0:SIZE/2,0:SIZE/2] = 5
+    #FEATURE[0:SIZE/2,0:SIZE/2] = 5
     X += FEATURE
 
-    print X
+    print (X)
 
     clusters = bicluster( X.copy( ) )
-    print "Clusters: "
-    print clusters
+    print ("Clusters: ")
+    print (clusters)
     for cluster in clusters:
-        print get_submatrix_from_cluster( cluster, X )
+        print (get_submatrix_from_cluster( cluster, X ))
